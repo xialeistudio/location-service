@@ -1,5 +1,6 @@
 # 定位服务
 面向接口设计的定位服务
+![Build Status](https://www.travis-ci.org/xialeistudio/location-service.svg?branch=master)
 
 ## 功能列表
 
