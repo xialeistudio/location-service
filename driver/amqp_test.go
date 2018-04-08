@@ -16,7 +16,7 @@ func TestAMap_LocationWithIp(t *testing.T) {
 
 func TestAMap_LocationWithAddress(t *testing.T) {
 	amap := NewAMap(os.Getenv("AMAP_KEY"))
-	location, err := amap.LocationWithAddress("")
+	location, err := amap.LocationWithAddress("广东省广州市天河区")
 	if err != nil {
 		t.Fatal(err)
 	}
