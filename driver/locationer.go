@@ -1,11 +1,18 @@
 package driver
 
+import "errors"
+
+var (
+	ErrInvalidResponse  = errors.New("-1: 解析响应失败")
+	ErrAddressNotExists = errors.New("-2: 地址不存在")
+)
+
 type Location struct {
 	Country  string `json:"country"`
 	Province string `json:"province"`
 	City     string `json:"city"`
 	District string `json:"district"`
-	Code     int32  `json:"code"`
+	Code     int    `json:"code"`
 }
 
 type Locationer interface {
@@ -14,5 +21,5 @@ type Locationer interface {
 	// 地址解析
 	LocationWithAddress(address string) (*Location, error)
 	// 逆地址解析
-	LocationWithCoordinate(points ...string) ([]Location, error)
+	LocationWithCoordinate(point string) (*Location, error)
 }
